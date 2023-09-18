@@ -2,6 +2,7 @@
 */
 
 use std::io;
+use rand::Rng;
 
 /*
 On the right of the equal sign is the value that guess is bound to, which is the result of calling String::new, a function that returns a new instance of a String. String is a string type provided by the standard library that is a growable, UTF-8 encoded bit of text.
@@ -12,6 +13,9 @@ In full, the let mut guess = String::new(); line has created a mutable variable 
 */
 fn main() {
     println!("Welcome to the guessing game!");
+
+    let secret_number = rand::thread_rng().gen_range(1..=100);
+
     println!("Please Enter Your Guess! : ");
 
     let mut guess = String::new();
